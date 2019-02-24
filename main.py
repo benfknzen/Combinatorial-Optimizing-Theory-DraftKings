@@ -6,15 +6,15 @@
 # Implements all the code and returns a list with combination of lineups
 #
 # Call csv_append.py in order to append fighter_data.csv with draftkings_mma_(date).csv
-# Filter dataset with filter_data_set.py in optimal ways
+# Filter data set with filter_data_set.py in optimal ways
 # Use fighter_data.csv to write back into draftkings_mma_(date).csv
 
 
 # import numpy as np
 from pandas import *
 
-STATIC_CHOOSE = 3 #rule of limiting the amount of picks within the given options
-STATIC_VALUE_UNDER_TEST = 50 # rule of limiting the salary
+STATIC_CHOOSE = 4  # rule of limiting the amount of picks within the given options
+STATIC_VALUE_UNDER_TEST = 100  # rule of limiting the salary
 
 final_list = [0]*30000
 global count
@@ -23,12 +23,13 @@ global count
 def find_combinations(numbers, target, partial=[]):
     s = sum(partial)
     # check if the partial sum is equals to target
-    if s <= target and len(partial) == STATIC_CHOOSE:  # required length
+
+    if s <= target and len(partial) <= STATIC_CHOOSE:  # required length
         global count
         final_list[count] = partial
         count = count + 1
     else:
-         final_list.remove(0)
+        final_list.remove(0)
 
     if s > target:
         return  # if we reach the number why bother to continue
@@ -58,7 +59,8 @@ if __name__ == "__main__":
     count = 0
 
     find_combinations([a, b, c, e, d, f, g, h, j, k], STATIC_VALUE_UNDER_TEST)
-
+    # n2sBen expand on the idea of combinations that can be any number and
+    # also make the method away from main---this is a powerful combinatorial tool
     # print(final_list)
 
     for i in final_list:

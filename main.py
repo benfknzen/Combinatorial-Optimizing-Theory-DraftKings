@@ -12,8 +12,10 @@
 
 # import numpy as np
 from pandas import *
+from FighterClass import Fighter
 
-STATIC_CHOOSE = 4  # rule of limiting the amount of picks within the given options
+
+STATIC_CHOOSE = 3  # rule of limiting the amount of picks within the given options
 STATIC_VALUE_UNDER_TEST = 100  # rule of limiting the salary
 
 final_list = [0]*30000
@@ -24,7 +26,7 @@ def find_combinations(numbers, target, partial=[]):
     s = sum(partial)
     # check if the partial sum is equals to target
 
-    if s <= target and len(partial) <= STATIC_CHOOSE:  # required length
+    if s <= target and len(partial) == STATIC_CHOOSE:  # required length
         global count
         final_list[count] = partial
         count = count + 1
@@ -44,8 +46,16 @@ def find_combinations(numbers, target, partial=[]):
 if __name__ == "__main__":
 
     # put elements into the same list if the choices restrict the counter choices
+    fighter1 = Fighter(1)
+    fighter1.key = 1
 
-    a = [1, 2, 3, 4]
+
+    # fighter1.full_initialization(434, first_name="punch", last_name="fad")
+
+    # print(fighter1.get_all_fighter_data())
+
+
+    a = [fighter1.key, 2, 3, 4]
     b = [5, 6, 7]
     c = [8, 9]
     d = []
@@ -56,6 +66,8 @@ if __name__ == "__main__":
     j = []
     k = []
 
+
+    # global variable needed for find combinations
     count = 0
 
     find_combinations([a, b, c, e, d, f, g, h, j, k], STATIC_VALUE_UNDER_TEST)

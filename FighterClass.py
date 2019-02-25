@@ -4,36 +4,74 @@
 #
 # Class subset of Player
 
-from Player import Player
+from PlayerClass import Player
 
 
-class FighterClass(Player):
+class Fighter(Player):
 
-    def __init__(self, key, first_name, last_name, win, win_by_knockout, win_by_submission, win_by_decision, loss,
-                 loss_by_knockout, loss_by_submission, loss_by_decision, no_contest):
+    # defines default input parameters for new Fighter object
+    def __init__(self, key):
+        self.key = key
+        self.first_name = ""
+        self.last_name = ""
+        self.win = ""
+        self.win_by_knockout = ""
+        self.win_by_submission = ""
+        self.win_by_decision = ""
+        self.loss = ""
+        self.loss_by_knockout = ""
+        self.loss_by_submission = ""
+        self.loss_by_decision = ""
+        self.no_contest = ""
 
-        Player.__init__(self, key, first_name, last_name)
+        # Draft Kings normalized spreadsheet import/export
+        self.position = ""
+        self.name_and_id_number = ""
+        self.name = ""
+        self.id_number = ""
+        self.roster_position = ""
+        self.salary = ""
+        self.game_info = ""
+        self.team_abbrev = ""
+        self.avg_point_per_game = ""
 
-        self.win = win
-        self.win_by_knockout = win_by_knockout
-        self.win_by_submission = win_by_submission
-        self.win_by_decision = win_by_decision
-        self.loss = loss
-        self.loss_by_knockout = loss_by_knockout
-        self.loss_by_submission = loss_by_submission
-        self.loss_by_decision = loss_by_decision
-        self.no_contest = no_contest
+    # Draft Kings fully defined spreadsheet
+    def draft_kings_initialization(self, position, name_and_id_number, name, id_number, roster_position, salary,
+                                   game_info, team_abbrev, avg_point_per_game):
+        self.position = position
+        self.name_and_id_number = name_and_id_number
+        self.name = name
+        self.id_number = id_number
+        self.roster_position = roster_position
+        self.salary = salary
+        self.game_info = game_info
+        self.team_abbrev = team_abbrev
+        self.avg_point_per_game = avg_point_per_game
 
+    # Fully defines the Fighter object
+    def full_initialization(self, key, first_name, last_name):
+
+        self.key = key
+        self.first_name = first_name
+        self.last_name = last_name
+        self.super_player()
+        # To  be added: rest of the parameters to initialize fully
+
+    # Fully displays the Fighter object
     def get_all_fighter_data(self):
-            return self.key + " " + self.first_name + " " + self.last_name + " " + self.win + " " + self.win_by_knockout + " " + self.win_by_submission
-            + " " + self.win_by_decision + self.loss + " " + self.loss_by_knockout + " " \
-            + loss_by_submission + " " + loss_by_decision + no_contest
+            return str(self.key) + " " + self.first_name + " " + self.last_name + " " + self.win + " " \
+                   + self.win_by_knockout + " " + self.win_by_submission + " " + self.win_by_decision \
+                   + self.loss + " " + self.loss_by_knockout + " " + self.loss_by_submission + " " \
+                   + self.loss_by_decision + " " + self.no_contest
 
-    def get_win(self):
-        return self.win
+    # Defines and initializes all of the superclass of this object.
+    # After initialized all functions of PlayerClass can be used.
+    def super_player(self):
+        Player.__init__(self, self.key, self.first_name, self.last_name)
 
-    def get_win_by_knockout(self):
-        return self.win_by_knockout
+
+
+
 
     # def all-the-other-relevant-data(self):
 # fill in relevant data that can be scrapped into fighter_data.csv (all data that we gather about our fighters should be not null)

@@ -25,19 +25,20 @@ class Fighter(Player):
         self.no_contest = ""
 
         # Draft Kings normalized spreadsheet import/export
-        self.position = ""
+
         self.name_and_id_number = ""
+        self.position = ""
         self.name = ""
         self.id_number = ""
         self.roster_position = ""
         self.salary = ""
         self.game_info = ""
         self.team_abbrev = ""
-        self.avg_point_per_game = ""
+        self.avg_points_per_game = ""
 
     # Draft Kings fully defined spreadsheet
     def draft_kings_initialization(self, position, name_and_id_number, name, id_number, roster_position, salary,
-                                   game_info, team_abbrev, avg_point_per_game):
+                                   game_info, team_abbrev, avg_points_per_game):
         self.position = position
         self.name_and_id_number = name_and_id_number
         self.name = name
@@ -46,7 +47,18 @@ class Fighter(Player):
         self.salary = salary
         self.game_info = game_info
         self.team_abbrev = team_abbrev
-        self.avg_point_per_game = avg_point_per_game
+        self.avg_points_per_game = avg_points_per_game
+
+    def get_all_draft_kings_data(self):
+        return str(self.name_and_id_number) + " " + \
+               str(self.position) + " " + \
+               str(self.name) + " " + \
+               str(self.id_number) + " " + \
+               str(self.roster_position) + " " + \
+               str(self.salary) + " " + \
+               str(self.game_info) + " " + \
+               str(self.team_abbrev) + " " + \
+               str(self.avg_points_per_game)
 
     # Fully defines the Fighter object
     def full_initialization(self, key, first_name, last_name):

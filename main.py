@@ -13,6 +13,7 @@
 # import numpy as np
 from pandas import *
 from FighterClass import Fighter
+import csv
 
 
 STATIC_CHOOSE = 3  # rule of limiting the amount of picks within the given options
@@ -54,6 +55,33 @@ if __name__ == "__main__":
 
     # print(fighter1.get_all_fighter_data())
 
+    # with open('draft_kings_mma_(2.23.2019).csv', mode='r') as csv_file:
+
+    mma_dk_column_formatting = ['Position', 'Name + ID', 'Name' + 'ID', 'Roster Position', 'Salary',
+                                'Game Info', 'TeamAbbrev', 'AvgPointsPerGame']
+    mma_dk_index_column_formatting = ['Name + ID']  # , 'ID']
+    df = pandas.read_csv("draft_kings_mma_(2.23.2019).csv", names=mma_dk_column_formatting)
+    #                          # columns = ["Position", "ID"])
+    # df_test = df.set_index("Position")
+
+    # print(df['Name + ID', 'TeamAbbrev'])
+    print(df[['Name + ID']])
+    # print(df["Position", "Stefan Struve (12110221)"])
+
+    # print(df[""].get_values())
+    # print(df["Stefan Struve (12110221)"])
+    # print("testttt~~~~~~~~~~~~~~~~~~~~~~")
+    # # print(df.loc[32][15])
+    # print(df.shape[0])
+    # print(df.shape[1])
+    # print(len(df.index))
+    # print(df.loc[15])
+    # print(df[1].get_values())
+    # print(df.)
+    # print(df["Position"].count())
+
+    # print(df_test)
+    print("endtestttt~~~~~~~~~~~~~~~~~~~~~~")
 
     a = [fighter1.key, 2, 3, 4]
     b = [5, 6, 7]
@@ -66,8 +94,7 @@ if __name__ == "__main__":
     j = []
     k = []
 
-
-    # global variable needed for find combinations
+    # global variable needed for finding combinations
     count = 0
 
     find_combinations([a, b, c, e, d, f, g, h, j, k], STATIC_VALUE_UNDER_TEST)

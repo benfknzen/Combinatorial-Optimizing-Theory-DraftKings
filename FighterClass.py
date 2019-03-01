@@ -25,6 +25,7 @@ class Fighter(Player):
         self.no_contest = ""
 
         # Draft Kings normalized spreadsheet import/export
+        self.draft_kings_mma_attributes = [None]*9
 
         self.name_and_id_number = ""
         self.position = ""
@@ -33,13 +34,13 @@ class Fighter(Player):
         self.roster_position = ""
         self.salary = ""
         self.game_info = ""
-        self.team_abbrev = ""
-        self.avg_points_per_game = ""
+        self.team_abbrev = None
+        self.avg_points_per_game = None
 
     # Draft Kings fully defined spreadsheet
     def draft_kings_initialization(self, position, name_and_id_number, name, id_number, roster_position, salary,
                                    game_info, team_abbrev, avg_points_per_game):
-        self.position = position
+        self.draft_kings_mma_attributes[0], self.position = position
         self.name_and_id_number = name_and_id_number
         self.name = name
         self.id_number = id_number

@@ -13,13 +13,13 @@
 import numpy as np
 from pandas import *
 from FighterClass import Fighter
-import csv
+import Data_Set_Functions
 
 
 STATIC_CHOOSE = 6  # rule of limiting the amount of picks within the given options
 STATIC_VALUE_UNDER_TEST = 500000  # rule of limiting the salary
 
-final_list = [None]*30000
+final_list = [None]*200000
 global count
 # global sumtest
 
@@ -55,7 +55,7 @@ def find_mma_fighter_combos(numbers, num_choose,  partial=[]):
 
     for i in range(len(numbers)):
         for j in range(len(numbers[i])):
-            n = numbers[i][j] ##Left off 2.26 How do we make sure we do not lose the object class?
+            n = numbers[i][j]
             remaining = numbers[i+1:]
             find_mma_fighter_combos(remaining, num_choose, partial + [n])
 
@@ -70,14 +70,14 @@ if __name__ == "__main__":
                                 'Game Info', 'TeamAbbrev', 'AvgPointsPerGame']
 
     mma_dk_index_column_formatting = ['Name + ID']
-    # with open('draft_kings_mma_(2.23.2019).csv', mode='r') as csv_file:
+    # with open('draft_kings_mma_('date').csv', mode='r') as csv_file:
     # column names are the ones listed above, these have to be in order with the columns of the csv file
     df = pandas.read_csv("draft_kings_mma_(3.2.2019).csv", names=mma_dk_column_formatting, skiprows=0) #, index_col=mma_dk_index_column_formatting
     mma_dk_column_formatting = df.loc[0]
-    # df_test = df.set_index("Position")
     num_fighters = 25   # true number of fighters+1
+
     # initializes fighter_list to be in a list of num_fighter elements
-    fighter_list = [0]*num_fighters  # for i in range(num_fighters)]
+    fighter_list = [0]*num_fighters
 
     for i in range(1, num_fighters):
         fighter_list[i] = Fighter(1)
@@ -93,39 +93,72 @@ if __name__ == "__main__":
         fighter_list[i].team_abbrev = df[mma_dk_column_formatting[7]][i]
         fighter_list[i].avg_points_per_game = float(df[mma_dk_column_formatting[8]][i])
 
-        print(str(fighter_list[i].get_all_draft_kings_data()))
-        print()
+        # prints out the fighter data
+        # print(str(fighter_list[i].get_all_draft_kings_data()))
+        # print()
 
     print("end reader and player initialization~~~~~~~~~~~~~~~~~~~~~~-------------------------------------------------")
 
-    # a = [fighter_list[1]]
-    # b = [fighter_list[3]]
-    # c = [fighter_list[12], fighter_list[13]]
-    # d = [fighter_list[4]]
-    # e = [fighter_list[6]]
-    # f = [fighter_list[10], fighter_list[15]]
-    # g = [fighter_list[9], fighter_list[16]]
-    # h = [fighter_list[5]]
-    # i = [fighter_list[11]]
-    # j = [fighter_list[7], fighter_list[18]]
-    a = [fighter_list[1]]
-    b = [fighter_list[5]]
-    c = [fighter_list[7], fighter_list[18]]
-    d = [fighter_list[4]]
-    e = [fighter_list[6]]
-    f = [fighter_list[8]]
-    g = [fighter_list[9], fighter_list[16]]
-    h = [fighter_list[10]]
-    i = [fighter_list[11], fighter_list[14]]
-    j = [fighter_list[12], fighter_list[13]]
+    # a = array([fighter_list[1]])
+    # b = array([fighter_list[2]])
+    # c = array([fighter_list[3]])
+    # d = array([fighter_list[4]])
+    # e = array([fighter_list[5]])
+    # f = array([fighter_list[6]])
+    # g = array([fighter_list[7]])
+    # h = array([fighter_list[8]])
+    # i = array([fighter_list[9]])
+    # j = array([fighter_list[10]])
+    # k = array([fighter_list[11]])
+    # loo = array([fighter_list[12]])
+    # looi = array([fighter_list[13]])
+    # m = array([fighter_list[14]])
+    # n = array([fighter_list[15]])
+    # o = array([fighter_list[16]])
+    # p = array([fighter_list[17]])
+    # q = array([fighter_list[18]])
+    # r = array([fighter_list[19]])
+    # s = array([fighter_list[20]])
+    # t = array([fighter_list[21]])
+    # u = array([fighter_list[22]])
+    # v = array([fighter_list[23]])
+    # w = array([fighter_list[24]])
+    #
+    # # global variable needed for finding combinations
+    # count = 0
+    #
+    # # fighter_list[10].salary = 3000
+    # # fighter_list[24].salary = 99999 #set for debugging purposes
+    #
+    # find_mma_fighter_combos([a, b, c, d, e, f, g, h, i, j, k, loo, looi, m, n, o,  p, q, r, s, t, u, v, w], STATIC_CHOOSE)
 
-    # global variable needed for finding combinations
+    # Simplified input to reduce processing time
+
+    a = array([fighter_list[1]])
+    b = array([fighter_list[2]])
+    c = array([fighter_list[3]])
+    d = array([fighter_list[4]])
+    e = array([fighter_list[5]])
+    f = array([fighter_list[6]])
+    g = array([fighter_list[7]])
+    h = array([fighter_list[8]])
+    i = array([fighter_list[9]])
+    j = array([fighter_list[10]])
+    k = array([fighter_list[11]])
+    loo = array([fighter_list[12]])
+    looi = array([fighter_list[13]])
+    m = array([fighter_list[14]])
+    n = array([fighter_list[15]])
+    o = array([fighter_list[16]])
+
+
+
     count = 0
 
     # fighter_list[10].salary = 3000
     # fighter_list[24].salary = 99999 #set for debugging purposes
 
-    find_mma_fighter_combos([a, b, c, d, e, f, g, h, i], STATIC_CHOOSE)
+    find_mma_fighter_combos([a, b, c, d, e, f, g, h, i, j, k, loo, looi, m, n, o], STATIC_CHOOSE)
 
     #-------------------------------------------------------------
     # Filter data set I should be able to add all the fighters in the list--- IE
@@ -140,42 +173,71 @@ if __name__ == "__main__":
     # Prints the total rows
     final_list_num_rows = np.shape(final_list)[0]
     final_list_num_cols = np.shape(final_list)[1]
-
-    print('There are a total of ' + str(final_list_num_rows) + ' total row combos lineups with a draft of ' + str(final_list_num_cols)
+    if final_list_num_rows != 0:
+        print('There are a total of ' + str(final_list_num_rows) + ' total row combos lineups with a draft of ' + str(final_list_num_cols)
           + ' players per lineup')
+    else:
+        print('There are no line ups possible given your input')
+
+    # data_set_filter_remove_same_game
+
+    final_display_array = Data_Set_Functions.data_set_filter_remove_same_game(final_list)
+
+    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the unique game filter')
 
     # Filters the data set by sum
-    superfinalarray = [None]*final_list_num_rows
-    for i in range(final_list_num_rows):
-        sum1 = 0
-        for j in range(final_list_num_cols):  # final_list[i]:
-            # print(final_list[i][j].name_and_id_number + ', ', end='')
-            # print(str(final_list[i][j].salary) + ', ', end='')
-            sum1 += final_list[i][j].salary
-            # print(final_list[i][j].draft_kings_mma_attributes[0] + ', ', end='')
-        if sum1 <= 50000:
-            superfinalarray[i] = final_list[i]
-        # print(str(sum1))
+
+    final_display_array = Data_Set_Functions.data_set_filter_by_sum(final_display_array, 50000)
+
+    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the sum filter')
 
 
+    # Before we sort we must first make sure to finish off the 3D matrix otherwise we will not get to analyze it well**
+
+    # final_display_array =
+    # Data_Set_Functions.data_set_sort_by(final_display_array, 'salary', 'descending')
+    #
+    # print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the sort filter')
+
+    # final_display_array = Data_Set_Functions.data_set_remove_player(final_display_array, )
+    #
+    # print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the no player filter')
+
+    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after same game filter')
     # Displays the array after filtering
-    superfinalarray = list(filter(None.__ne__, superfinalarray))
 
-    a = np.shape(superfinalarray)[0]
-    b = np.shape(superfinalarray)[1]
+    a = np.shape(final_display_array)[0]
+    b = np.shape(final_display_array)[1]
     for i in range(a):
         sum1 = 0
         for j in range(b):  # final_list[i]:
-            sum1 += superfinalarray[i][j].salary
-            print(superfinalarray[i][j].name_and_id_number + ', ', end='')
+            sum1 += final_display_array[i][j].salary
+            print(final_display_array[i][j].name_and_id_number + ', ', end='')
         print(str(sum1))
+    print('-----------------------------------------------------------------------------------------------------------')
+    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups based on your filter settings')
+    print('-----------------------------------------------------------------------------------------------------------')
 
-    # print('There are a total of ' + str(final_list_num_rows) + ' unique lineups based on your filter settings')
-    print('There are a total of ' + str(np.shape(superfinalarray)[0]) + ' unique lineups based on your filter settings')
+    print(Data_Set_Functions.data_set_analyzed_sum) #we need it this way so we can sort by weights later
+
+    print('# prints a brand new 3d array that will be analyzed')
+    # prints a brand new 3d array that will be analyzed
+
+    new_3D_data_set = Data_Set_Functions.data_set_compiled_analyzed_data(final_display_array)
+    print(new_3D_data_set)
+    print('# prints a brand new 3d array that will be analyzed-------------------------')
+
+    # a = np.shape(new_3D_data_set)[0]
+    # b = np.shape(new_3D_data_set)[1]
+    # print(str(a) + ' by ' + str(b))
+    print(np.shape(new_3D_data_set))
+
+    # sorts by
+    new_3D_data_set = Data_Set_Functions.data_set_sort_by(new_3D_data_set, 'salary', 'descending') #was not able to sort via Sum it reduces the list
+    # print(new_3D_data_set)
+    print('# print data set after sorting-------------------------')
+    print(np.shape(new_3D_data_set))
 
 
-#
 # add rules and fitness test and rules within the fitness test FPTS points are the most important
 # figure out a prediction model based on this
-#
-# ways to filter an list python

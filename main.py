@@ -216,6 +216,7 @@ if __name__ == "__main__":
         print(str(sum1))
     print('-----------------------------------------------------------------------------------------------------------')
     print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups based on your filter settings')
+    print('There are a total of ' + str(np.shape(final_display_array)) + ' unique parameters based on your filter settings')
     print('-----------------------------------------------------------------------------------------------------------')
 
     print(Data_Set_Functions.data_set_analyzed_sum) #we need it this way so we can sort by weights later
@@ -224,8 +225,19 @@ if __name__ == "__main__":
     # prints a brand new 3d array that will be analyzed
 
     new_3D_data_set = Data_Set_Functions.data_set_compiled_analyzed_data(final_display_array)
-    print(new_3D_data_set)
-    print('# prints a brand new 3d array that will be analyzed-------------------------')
+    print(new_3D_data_set[13][0][1])
+
+    # in order to traverse into our new array we must go to print(new_3D_data_set[1][0][0][0].salary) 'lol wow'
+    # a = np.shape(new_3D_data_set)[0]
+    # b = np.shape(new_3D_data_set)[1]
+    # for i in range(a):
+    #     sum1 = 0
+    #     for j in range(b):  # final_list[i]:
+    #         sum1 += final_display_array[i][j].salary
+    #         print(final_display_array[i][j].name_and_id_number + ', ', end='')
+    #     print(str(sum1))
+
+    print('#--------------------------------------------------------------------------------------------------------')
 
     # a = np.shape(new_3D_data_set)[0]
     # b = np.shape(new_3D_data_set)[1]
@@ -233,10 +245,17 @@ if __name__ == "__main__":
     print(np.shape(new_3D_data_set))
 
     # sorts by
+
     new_3D_data_set = Data_Set_Functions.data_set_sort_by(new_3D_data_set, 'salary', 'descending') #was not able to sort via Sum it reduces the list
+
     # print(new_3D_data_set)
     print('# print data set after sorting-------------------------')
     print(np.shape(new_3D_data_set))
+    for i in range(np.shape(final_display_array)[0]):
+        for j in range(6):
+                print(new_3D_data_set[i][0][j].name_and_id_number + ', ', end= ' ')
+        print()
+
 
 
 # add rules and fitness test and rules within the fitness test FPTS points are the most important

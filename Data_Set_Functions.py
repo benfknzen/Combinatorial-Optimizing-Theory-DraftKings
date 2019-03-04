@@ -32,7 +32,8 @@ def data_set_compiled_analyzed_data(input_data):
     new_3d_list = [None]*len(input_data)
 
     for i in range(len(input_data)):
-        new_3d_list[i] = [[input_data[i], data_set_analyzed_sum[i]]]
+        new_3d_list[i] = [input_data[i], data_set_analyzed_sum[i]]
+        # print(new_3d_list[i][0])
 
     return new_3d_list
 
@@ -76,19 +77,12 @@ def data_set_filter_remove_same_game(input_data):
 
     return list(filter(None.__ne__, output_data))
 
+#Sorts data_set by salary
 
 def data_set_sort_by(input_data, attribute, direction):
-    # if attribute == 'salary' and direction == 'descending':
-    #     print('cool beans')
-    # print(input_data)
-    output_data = sorted(input_data[0], key=get_key)
-    # print("sort data set by attribute and direction")
-
+    if attribute == 'salary' and direction == 'descending':
+        output_data = sorted(input_data, key=lambda x: x[1], reverse=True)
     return output_data#list(filter(None.__ne__, output_data))
-
-
-def get_key(item):
-    return item[1]
 
 def data_set_remove_player(input_data, fighter_object):
     print("remove lineup by attribute and direction ")

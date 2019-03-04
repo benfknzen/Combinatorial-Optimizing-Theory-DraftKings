@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="becd09c9-a996-4e13-89fc-df75f9975d97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data_Set_Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.draft_kings_mma_(3.2.2019).csv#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter_data_set.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Set_Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Set_Functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Make_a_neural_network/mainNeuralNetwork3Layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="-788">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -29,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/FighterClass.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
-              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="17" />
+              <caret line="45" column="17" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -38,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/PlayerClass.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -59,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/NewFighterClass.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="87">
-              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -67,15 +64,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="230" column="38" lean-forward="true" selection-start-line="230" selection-start-column="38" selection-end-line="230" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
               <folding>
                 <element signature="e#444#462#0" expanded="true" />
-                <element signature="e#3760#3789#0" />
-                <element signature="e#4000#4030#0" />
-                <element signature="e#7354#7386#0" />
-                <element signature="e#7282#7344#0" />
-                <element signature="e#7455#7570#0" />
               </folding>
             </state>
           </provider>
@@ -84,12 +76,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data_Set_Functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="-2">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#801#819#0" expanded="true" />
-                <element signature="e#2484#2534#0" />
-                <element signature="e#2421#2449#0" />
               </folding>
             </state>
           </provider>
@@ -152,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,7 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,13 +316,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123595506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36260623" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36260623" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40084985" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,7 +366,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Data_Set_Functions.py</url>
-          <line>79</line>
+          <line>81</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
@@ -575,16 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="136">
-            <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Useful Python Models/OrganizedClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -602,54 +583,57 @@
     <entry file="file://$PROJECT_DIR$/PlayerClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FighterClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Make_a_neural_network/mainNeuralNetwork3Layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NewFighterClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FighterClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Make_a_neural_network/mainNeuralNetwork3Layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-788">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data_Set_Functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="-2">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#801#819#0" expanded="true" />
-            <element signature="e#2484#2534#0" />
-            <element signature="e#2421#2449#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="230" column="38" lean-forward="true" selection-start-line="230" selection-start-column="38" selection-end-line="230" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
           <folding>
             <element signature="e#444#462#0" expanded="true" />
-            <element signature="e#3760#3789#0" />
-            <element signature="e#4000#4030#0" />
-            <element signature="e#7354#7386#0" />
-            <element signature="e#7282#7344#0" />
-            <element signature="e#7455#7570#0" />
           </folding>
         </state>
       </provider>

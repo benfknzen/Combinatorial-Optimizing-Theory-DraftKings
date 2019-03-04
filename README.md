@@ -75,3 +75,16 @@ Manipulates data specific to our application. A more complex Pandas library.
 Within this function there will be a Smart_filter which is a weighted approach towards finding optimal solutions while taking n-dimensional data. A neural network approach would be worth pursuing.
 
 *From Probability based elimination: When filtering on probability based elimination it is important to focus gathering and using data relative to the rules of the game.  Then creating a strong data organizer and optimizer based off of this raw data, rather than secondary or n-th order data.
+
+
+Thoughts 3.4.2019 Updated:
+
+I have the sorting working for AvgPointsPerGame for each line up in descending order so priority lineup entry is possible
+
+Default stat AvgPointsPerGame is a lagging indicator because it also accounts for fights where fighters lost, these numbers skew the potential future data. ---Instead the estimated PointsPerNextGame is defined as if the player wins. A linear regression model made from stats of previous WINS of both: the fighter we care to predict stats, and opponents of this fighter will be used for prediction for PointsPerNextGame analysis.
+The relevant data taken should be relative to other opposing team's stats.
+
+In MMA this would only be one opponent
+
+In the game of basketball this synergistic approach accounts for all the players each our main Hero prediction and the team's actual teammates for the match.
+The relevant data used to take into account should be relative to the contest rules

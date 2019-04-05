@@ -39,9 +39,18 @@ import csv
 # print(player1.get_all_fighter_data())
 # print(player1.name())
 
-def csv_scrape(slave_file_name, master_file_name):
 
-    print(slave_file_name)
-    print(master_file_name)
+# def csv_scrape(slave_file_name, master_file_name):
+#
+#     print(slave_file_name)
+#     print(master_file_name)
+#
+#     return []
 
-    return []
+
+import scrapy
+
+
+class BrickSetSpider(scrapy.Spider):
+    name = "brickset_spider"
+    start_urls = ['http://brickset.com/sets/year-2016']

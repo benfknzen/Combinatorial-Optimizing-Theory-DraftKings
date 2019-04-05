@@ -26,7 +26,7 @@ class Fighter(Player):
     def draft_kings_initialization(self, position, name_and_id_number, name, id_number, roster_position, salary,
                                    game_info, team_abbrev, avg_points_per_game):
         return
-    
+
     # bi-dictionary setting occurs during mapping
     # def __setitem__(self, key, val):
     #     dict.__setitem__(self, key, val)

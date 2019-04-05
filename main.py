@@ -17,7 +17,10 @@ import Data_Set_Functions
 
 
 STATIC_CHOOSE = 6  # rule of limiting the amount of picks within the given options
-STATIC_VALUE_UNDER_TEST = 500000  # rule of limiting the salary
+STATIC_VALUE_UNDER_TEST = 50000  # rule of limiting the salary
+num_fighters = 18  # true number of fighters+1
+STATIC_NUM_LINE_UPS = 20    # creates an error if it is greater than the avalaible num lineups
+FILE_NAME = "draft_kings_mma_(3.30.2019).csv"
 
 final_list = [None]*200000
 global count
@@ -67,14 +70,13 @@ if __name__ == "__main__":
 
     # Column order matters
     mma_dk_column_formatting = ['Name + ID', 'Position', 'Name', 'ID', 'Roster Position', 'Salary',
-                                'Game Info', 'TeamAbbrev', 'AvgPointsPerGame']
+                                'Game Info', 'TeamAbbrev', 'AvgPointsPerGame', 'Smart Prediction']
 
     mma_dk_index_column_formatting = ['Name + ID']
     # with open('draft_kings_mma_('date').csv', mode='r') as csv_file:
     # column names are the ones listed above, these have to be in order with the columns of the csv file
-    df = pandas.read_csv("draft_kings_mma_(3.2.2019).csv", names=mma_dk_column_formatting, skiprows=0) #, index_col=mma_dk_index_column_formatting
+    df = pandas.read_csv(FILE_NAME, names=mma_dk_column_formatting, skiprows=0) #, index_col=mma_dk_index_column_formatting
     mma_dk_column_formatting = df.loc[0]
-    num_fighters = 25   # true number of fighters+1
 
     # initializes fighter_list to be in a list of num_fighter elements
     fighter_list = [0]*num_fighters
@@ -93,72 +95,15 @@ if __name__ == "__main__":
         fighter_list[i].team_abbrev = df[mma_dk_column_formatting[7]][i]
         fighter_list[i].avg_points_per_game = float(df[mma_dk_column_formatting[8]][i])
 
-        # prints out the fighter data
-        # print(str(fighter_list[i].get_all_draft_kings_data()))
-        # print()
-
     print("end reader and player initialization~~~~~~~~~~~~~~~~~~~~~~-------------------------------------------------")
 
-    # a = array([fighter_list[1]])
-    # b = array([fighter_list[2]])
-    # c = array([fighter_list[3]])
-    # d = array([fighter_list[4]])
-    # e = array([fighter_list[5]])
-    # f = array([fighter_list[6]])
-    # g = array([fighter_list[7]])
-    # h = array([fighter_list[8]])
-    # i = array([fighter_list[9]])
-    # j = array([fighter_list[10]])
-    # k = array([fighter_list[11]])
-    # loo = array([fighter_list[12]])
-    # looi = array([fighter_list[13]])
-    # m = array([fighter_list[14]])
-    # n = array([fighter_list[15]])
-    # o = array([fighter_list[16]])
-    # p = array([fighter_list[17]])
-    # q = array([fighter_list[18]])
-    # r = array([fighter_list[19]])
-    # s = array([fighter_list[20]])
-    # t = array([fighter_list[21]])
-    # u = array([fighter_list[22]])
-    # v = array([fighter_list[23]])
-    # w = array([fighter_list[24]])
-    #
-    # # global variable needed for finding combinations
-    # count = 0
-    #
-    # # fighter_list[10].salary = 3000
-    # # fighter_list[24].salary = 99999 #set for debugging purposes
-    #
-    # find_mma_fighter_combos([a, b, c, d, e, f, g, h, i, j, k, loo, looi, m, n, o,  p, q, r, s, t, u, v, w], STATIC_CHOOSE)
-
-    # Simplified input to reduce processing time
-
-    a = array([fighter_list[1]])
-    b = array([fighter_list[2]])
-    c = array([fighter_list[3]])
-    d = array([fighter_list[4]])
-    e = array([fighter_list[5]])
-    f = array([fighter_list[6]])
-    g = array([fighter_list[7]])
-    h = array([fighter_list[8]])
-    i = array([fighter_list[9]])
-    j = array([fighter_list[10]])
-    k = array([fighter_list[11]])
-    loo = array([fighter_list[12]])
-    looi = array([fighter_list[13]])
-    m = array([fighter_list[14]])
-    n = array([fighter_list[15]])
-    o = array([fighter_list[16]])
-
-
+    testarray = []
+    for i in range(1, num_fighters):
+        testarray.append([fighter_list[i]])
 
     count = 0
 
-    # fighter_list[10].salary = 3000
-    # fighter_list[24].salary = 99999 #set for debugging purposes
-
-    find_mma_fighter_combos([a, b, c, d, e, f, g, h, i, j, k, loo, looi, m, n, o], STATIC_CHOOSE)
+    find_mma_fighter_combos(testarray, STATIC_CHOOSE)
 
     #-------------------------------------------------------------
     # Filter data set I should be able to add all the fighters in the list--- IE
@@ -187,7 +132,7 @@ if __name__ == "__main__":
 
     # Filters the data set by sum
 
-    final_display_array = Data_Set_Functions.data_set_filter_by_sum(final_display_array, 50000)
+    final_display_array = Data_Set_Functions.data_set_filter_by_sum(final_display_array, STATIC_VALUE_UNDER_TEST)
 
     print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the sum filter')
 
@@ -219,13 +164,13 @@ if __name__ == "__main__":
     print('There are a total of ' + str(np.shape(final_display_array)) + ' unique parameters based on your filter settings')
     print('-----------------------------------------------------------------------------------------------------------')
 
-    print(Data_Set_Functions.data_set_analyzed_sum) #we need it this way so we can sort by weights later
+    print(Data_Set_Functions.data_set_analyzed_sum_salary) #we need it this way so we can sort by weights later
 
     print('# prints a brand new 3d array that will be analyzed')
     # prints a brand new 3d array that will be analyzed
 
     new_3D_data_set = Data_Set_Functions.data_set_compiled_analyzed_data(final_display_array)
-    print(new_3D_data_set[13][0][1])
+    # print(new_3D_data_set[13][0][1])
 
     # in order to traverse into our new array we must go to print(new_3D_data_set[1][0][0][0].salary) 'lol wow'
     # a = np.shape(new_3D_data_set)[0]
@@ -239,22 +184,26 @@ if __name__ == "__main__":
 
     print('#--------------------------------------------------------------------------------------------------------')
 
-    # a = np.shape(new_3D_data_set)[0]
-    # b = np.shape(new_3D_data_set)[1]
-    # print(str(a) + ' by ' + str(b))
     print(np.shape(new_3D_data_set))
 
-    # sorts by
+    # sorts by total sum of line up avg_points_per_game
 
-    new_3D_data_set = Data_Set_Functions.data_set_sort_by(new_3D_data_set, 'salary', 'descending') #was not able to sort via Sum it reduces the list
+    new_3D_data_set = Data_Set_Functions.data_set_sort_by(new_3D_data_set, 'salary', 'ascending') #was not able to sort via Sum it reduces the list
 
     # print(new_3D_data_set)
     print('# print data set after sorting-------------------------')
     print(np.shape(new_3D_data_set))
-    for i in range(np.shape(final_display_array)[0]):
-        for j in range(6):
-                print(new_3D_data_set[i][0][j].name_and_id_number + ', ', end= ' ')
-        print()
+    if STATIC_NUM_LINE_UPS > np.shape(new_3D_data_set)[0]:
+        STATIC_NUM_LINE_UPS = np.shape(new_3D_data_set)[0]
+    for i in range(STATIC_NUM_LINE_UPS):
+        # print(new_3D_data_set[i])
+        for j in range(len(new_3D_data_set[i][0])):
+                print(new_3D_data_set[i][0][j].name_and_id_number + ', ', end=' ')
+        print(str(new_3D_data_set[i][1]) + ', ', end=' ')
+        print(new_3D_data_set[i][2])
+        # print()
+    print(str(STATIC_NUM_LINE_UPS) + ' line ups are displayed')
+    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after your filter settings')
 
 
 

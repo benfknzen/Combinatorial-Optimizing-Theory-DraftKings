@@ -10,19 +10,19 @@
 # Use fighter_data.csv to write back into draftkings_mma_(date).csv
 
 
-import numpy as np
+#import numpy as np
 from pandas import *
 from FighterClass import Fighter
 import Data_Set_Functions
-
+import datetime
 
 STATIC_CHOOSE = 6  # rule of limiting the amount of picks within the given options
 STATIC_VALUE_UNDER_TEST = 50000  # rule of limiting the salary
-num_fighters = 18  # true number of fighters+1
-STATIC_NUM_LINE_UPS = 20    # creates an error if it is greater than the avalaible num lineups
-FILE_NAME = "draft_kings_mma_(3.30.2019).csv"
+num_fighters = 20  #true number of fighters+1 also errors if there are no combinations given the number of fighters
+STATIC_NUM_LINE_UPS = 20    # creates an error if it is greater than the available num lineups
+FILE_NAME = "draft_kings_mma_(8.10.2019).csv" # filename
 
-final_list = [None]*200000
+final_list = [None]*2000000
 global count
 # global sumtest
 
@@ -65,17 +65,16 @@ def find_mma_fighter_combos(numbers, num_choose,  partial=[]):
 
 if __name__ == "__main__":
 
-    # put elements into the same list if the choices restrict the counter choices
-    # print(fighter1.get_all_fighter_data())
+    start = datetime.datetime.now()
 
     # Column order matters
     mma_dk_column_formatting = ['Name + ID', 'Position', 'Name', 'ID', 'Roster Position', 'Salary',
                                 'Game Info', 'TeamAbbrev', 'AvgPointsPerGame', 'Smart Prediction']
 
     mma_dk_index_column_formatting = ['Name + ID']
-    # with open('draft_kings_mma_('date').csv', mode='r') as csv_file:
+
     # column names are the ones listed above, these have to be in order with the columns of the csv file
-    df = pandas.read_csv(FILE_NAME, names=mma_dk_column_formatting, skiprows=0) #, index_col=mma_dk_index_column_formatting
+    df = pandas.read_csv("draftking CSV/" + FILE_NAME, names=mma_dk_column_formatting, skiprows=0) #, index_col=mma_dk_index_column_formatting
     mma_dk_column_formatting = df.loc[0]
 
     # initializes fighter_list to be in a list of num_fighter elements
@@ -136,45 +135,10 @@ if __name__ == "__main__":
 
     print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the sum filter')
 
-
-    # Before we sort we must first make sure to finish off the 3D matrix otherwise we will not get to analyze it well**
-
-    # final_display_array =
-    # Data_Set_Functions.data_set_sort_by(final_display_array, 'salary', 'descending')
+    # Displays the array after filtering, before the final filter
     #
-    # print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the sort filter')
-
-    # final_display_array = Data_Set_Functions.data_set_remove_player(final_display_array, )
-    #
-    # print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after the no player filter')
-
-    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after same game filter')
-    # Displays the array after filtering
-
-    a = np.shape(final_display_array)[0]
-    b = np.shape(final_display_array)[1]
-    for i in range(a):
-        sum1 = 0
-        for j in range(b):  # final_list[i]:
-            sum1 += final_display_array[i][j].salary
-            print(final_display_array[i][j].name_and_id_number + ', ', end='')
-        print(str(sum1))
-    print('-----------------------------------------------------------------------------------------------------------')
-    print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups based on your filter settings')
-    print('There are a total of ' + str(np.shape(final_display_array)) + ' unique parameters based on your filter settings')
-    print('-----------------------------------------------------------------------------------------------------------')
-
-    print(Data_Set_Functions.data_set_analyzed_sum_salary) #we need it this way so we can sort by weights later
-
-    print('# prints a brand new 3d array that will be analyzed')
-    # prints a brand new 3d array that will be analyzed
-
-    new_3D_data_set = Data_Set_Functions.data_set_compiled_analyzed_data(final_display_array)
-    # print(new_3D_data_set[13][0][1])
-
-    # in order to traverse into our new array we must go to print(new_3D_data_set[1][0][0][0].salary) 'lol wow'
-    # a = np.shape(new_3D_data_set)[0]
-    # b = np.shape(new_3D_data_set)[1]
+    # a = np.shape(final_display_array)[0]
+    # b = np.shape(final_display_array)[1]
     # for i in range(a):
     #     sum1 = 0
     #     for j in range(b):  # final_list[i]:
@@ -182,11 +146,18 @@ if __name__ == "__main__":
     #         print(final_display_array[i][j].name_and_id_number + ', ', end='')
     #     print(str(sum1))
 
+    # print(Data_Set_Functions.data_set_analyzed_sum_salary) #we need it this way so we can sort by weights later
+
+
+    # prints a brand new 3d array that will be analyzed
+
+    new_3D_data_set = Data_Set_Functions.data_set_compiled_analyzed_data(final_display_array)
+
     print('#--------------------------------------------------------------------------------------------------------')
 
-    print(np.shape(new_3D_data_set))
-
     # sorts by total sum of line up avg_points_per_game
+
+    # New 3D being, Raw Lineup Data, Salary Sum, Avg_points_per_game (modified in the csv)
 
     new_3D_data_set = Data_Set_Functions.data_set_sort_by(new_3D_data_set, 'salary', 'ascending') #was not able to sort via Sum it reduces the list
 
@@ -201,10 +172,11 @@ if __name__ == "__main__":
                 print(new_3D_data_set[i][0][j].name_and_id_number + ', ', end=' ')
         print(str(new_3D_data_set[i][1]) + ', ', end=' ')
         print(new_3D_data_set[i][2])
-        # print()
     print(str(STATIC_NUM_LINE_UPS) + ' line ups are displayed')
     print('There are a total of ' + str(np.shape(final_display_array)[0]) + ' unique lineups after your filter settings')
 
+    finish = datetime.datetime.now()
+    print("Execution time:" + str(finish - start))
 
 
 # add rules and fitness test and rules within the fitness test FPTS points are the most important

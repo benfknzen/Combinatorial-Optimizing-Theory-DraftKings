@@ -16,29 +16,49 @@ def remove_whitespace(value):
 
 
 class UfcStats(scrapy.Item):
-    Fighter_Name = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Strikes = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Takedowns = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Submission_Attempts = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Passes = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-
-    Weight_Class = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Method = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Round = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Time = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Result = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-
     Location = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
     Date = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
     Event_Name = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    
-    Height = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Weight = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Reach = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Stance = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    DOB = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    Strikes_Per_Min = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
-    TD_Avg = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Fighter_Name1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Strikes1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Takedowns1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Submission_Attempts1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Passes1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Weight_Class1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Method1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Round1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Time1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Result1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Height1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Weight1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Reach1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Stance1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    DOB1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Strikes_Per_Min1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    TD_Avg1 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Fighter_Name2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Strikes2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Takedowns2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Submission_Attempts2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Passes2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Weight_Class2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Method2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Round2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Time2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Result2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+
+    Height2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Weight2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Reach2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Stance2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    DOB2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    Strikes_Per_Min2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
+    TD_Avg2 = scrapy.Field(input_processor=MapCompose(remove_tags), output_processor=TakeFirst())
 
 
 class JokeItem(scrapy.Item):

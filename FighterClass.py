@@ -26,7 +26,6 @@ class Fighter(Player):
 
         # Draft Kings normalized spreadsheet import/export
         self.draft_kings_mma_attributes = [None]*9
-
         self.name_and_id_number = ""
         self.position = ""
         self.name = ""

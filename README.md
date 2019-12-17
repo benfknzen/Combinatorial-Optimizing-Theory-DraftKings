@@ -1,7 +1,7 @@
 # Combinatorial-Optimizing-Theory-DraftKings
 Google doc: https://docs.google.com/document/d/1T2konG3rGbnJsHpv_LCwMBu_KvBv2bqaaab_bBlw02g/edit
 Rules of DraftKings MMA: https://www.draftkings.com/help/rules/mma (find raw data that can be filtered under these rules of scoring)
-Authors: Benjamin Zeng]
+Authors: Benjamin Zeng
 
 ***Non coding part***
 

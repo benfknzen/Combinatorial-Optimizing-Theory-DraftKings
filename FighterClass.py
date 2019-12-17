@@ -1,5 +1,5 @@
 # Google doc: https://docs.google.com/document/d/1T2konG3rGbnJsHpv_LCwMBu_KvBv2bqaaab_bBlw02g/edit
-# Authors: Benjamin Zeng, Jordan Shih
+# Authors: Benjamin Zeng
 # Class
 #
 # Class subset of Player
